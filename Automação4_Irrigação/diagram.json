@@ -1,0 +1,52 @@
+
+{
+  "version": 1,
+  "author": "Casa Inteligente",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot",
+      "top": -80,
+      "left": 350,
+      "attrs": {
+        "value": "50"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led",
+      "top": 120,
+      "left": 250,
+      "attrs": {
+        "color": "blue"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 180,
+      "left": 250,
+      "attrs": {
+        "value": "220"
+      }
+    }
+  ],
+  "connections": [
+    ["pot:VCC", "uno:5V", "red", []],
+    ["pot:GND", "uno:GND.1", "black", []],
+    ["pot:SIG", "uno:A0", "green", []],
+    ["led:A", "uno:8", "green", []],
+    ["led:C", "r1:1", "black", []],
+    ["r1:2", "uno:GND.2", "black", []]
+  ],
+  "dependencies": {}
+}
+

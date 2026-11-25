@@ -1,0 +1,49 @@
+
+{
+  "version": 1,
+  "author": "Casa Inteligente",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir",
+      "top": -80,
+      "left": 250,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led",
+      "top": 100,
+      "left": 250,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 160,
+      "left": 250,
+      "attrs": {
+        "value": "220"
+      }
+    }
+  ],
+  "connections": [
+    ["pir:VCC", "uno:5V", "red", []],
+    ["pir:GND", "uno:GND.1", "black", []],
+    ["pir:OUT", "uno:2", "green", []],
+    ["led:A", "uno:13", "green", []],
+    ["led:C", "r1:1", "black", []],
+    ["r1:2", "uno:GND.2", "black", []]
+  ],
+  "dependencies": {}
+}

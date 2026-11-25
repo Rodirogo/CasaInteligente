@@ -1,0 +1,42 @@
+
+{
+  "version": 1,
+  "author": "Casa Inteligente",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-slide-switch",
+      "id": "porta",
+      "top": -80,
+      "left": 250,
+      "attrs": {
+        "direction": "up",
+        "state": "0"
+      }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "buzzer",
+      "top": 120,
+      "left": 250,
+      "attrs": {
+        "volume": "0.1"
+      }
+    }
+  ],
+  "connections": [
+    ["porta:1", "uno:5V", "red", []],
+    ["porta:2", "uno:2", "green", []],
+    ["porta:3", "uno:GND.1", "black", []],
+    ["buzzer:1", "uno:GND.2", "black", []],
+    ["buzzer:2", "uno:8", "green", []]
+  ],
+  "dependencies": {}
+}

@@ -1,0 +1,64 @@
+
+{
+  "version": 1,
+  "author": "Casa Inteligente",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-gas-sensor",
+      "id": "mq2",
+      "top": -80,
+      "left": 300,
+      "attrs": {
+        "ppm": "200"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led",
+      "top": 120,
+      "left": 300,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 180,
+      "left": 400,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "buzzer",
+      "top": 250,
+      "left": 400,
+      "attrs": {
+        "volume": "0.02"
+      }
+    }
+  ],
+  "connections": [
+    ["mq2:VCC", "uno:5V", "red", []],
+    ["mq2:GND", "uno:GND.1", "black", []],
+    ["mq2:AOUT", "uno:A0", "green", []],
+
+    ["led:A", "uno:8", "green", []],
+    ["led:C", "r1:1", "black", []],
+    ["r1:2", "uno:GND.2", "black", []],
+
+    ["buzzer:1", "uno:GND.2", "black", []],
+    ["buzzer:2", "uno:9", "green", []]
+  ],
+  "dependencies": {}
+}
